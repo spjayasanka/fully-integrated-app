@@ -31,5 +31,35 @@ services:
       postgres:
         condition: service_healthy
 
+  user-service:
+    build:
+      context: ../backend/user-service
+      dockerfile: Dockerfile
+    container_name: user-service
+    ports:
+      - "8071:8071"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/myapp
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  order-service:
+    build:
+      context: ../backend/order-service
+      dockerfile: Dockerfile
+    container_name: order-service
+    ports:
+      - "8072:8072"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/myapp
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      postgres:
+        condition: service_healthy
+
 volumes:
   postgres_data:
