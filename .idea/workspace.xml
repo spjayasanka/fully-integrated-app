@@ -4,21 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9c9ce81-fd30-4f13-b747-b4935990b59c" name="Changes" comment="service discovery added">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/order-service/src/main/java/com/spjartz/orderservice/config/RedisCacheConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/product-service/src/main/java/com/spjartz/productservice/config/RedisCacheConfig.java" afterDir="false" />
+    <list default="true" id="f9c9ce81-fd30-4f13-b747-b4935990b59c" name="Changes" comment="redis cache added to the application">
+      <change afterPath="$PROJECT_DIR$/backend/common-events/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/common-events/src/main/java/com/spjartz/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/common-events/src/main/java/com/spjartz/event/OrderCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/common-events/src/test/java/com/spjartz/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/notification-service/src/main/java/com/spjartz/notificationservice/event/NotificationConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/order-service/src/main/java/com/spjartz/orderservice/config/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/order-service/src/main/java/com/spjartz/orderservice/event/OrderEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/product-service/src/main/java/com/spjartz/productservice/event/OrderCreatedConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/order-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/order-service/src/main/java/com/spjartz/orderservice/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/order-service/src/main/java/com/spjartz/orderservice/OrderServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/order-service/src/main/java/com/spjartz/orderservice/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/order-service/src/main/java/com/spjartz/orderservice/entity/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/order-service/src/main/java/com/spjartz/orderservice/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/order-service/src/main/java/com/spjartz/orderservice/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/order-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/product-service/src/main/java/com/spjartz/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product-service/src/main/java/com/spjartz/productservice/ProductServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/product-service/src/main/java/com/spjartz/productservice/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product-service/src/main/java/com/spjartz/productservice/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/product-service/src/main/java/com/spjartz/productservice/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product-service/src/main/java/com/spjartz/productservice/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product-service/src/main/resources/application.yml" afterDir="false" />
@@ -29,6 +32,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/sanje/Desktop/LEARN/FULLY_INTEGRATED_APP/myapp" value="37t4gdY38V5t4r4RGyOptR31Ued" />
+    </persistenceIdMap>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,40 +60,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;HTTP Request.generated-requests | #35.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.api-gateway [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.api-gateway [install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.OrderServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.ProductServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.ServiceDiscoveryApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sanje/Desktop/LEARN/FULLY_INTEGRATED_APP/myapp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.generated-requests | #35.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.api-gateway [clean].executor": "Run",
+    "Maven.api-gateway [install].executor": "Run",
+    "Maven.common-events [clean].executor": "Run",
+    "Maven.common-events [install].executor": "Run",
+    "Maven.order-service [clean].executor": "Run",
+    "Maven.order-service [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Debug",
+    "Spring Boot.NotificationServiceApplication.executor": "Run",
+    "Spring Boot.OrderServiceApplication.executor": "Debug",
+    "Spring Boot.ProductServiceApplication.executor": "Debug",
+    "Spring Boot.ServiceDiscoveryApplication.executor": "Debug",
+    "Spring Boot.UserServiceApplication.executor": "Debug",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/sanje/Desktop/LEARN/FULLY_INTEGRATED_APP/myapp/backend/product-service/src/main/java/com/spjartz/productservice",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sanje\Desktop\LEARN\FULLY_INTEGRATED_APP\myapp\backend\product-service\src\main\java\com\spjartz\productservice" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.spjartz.commonevents.event" />
+      <recent name="com.spjartz.notificationservice.event" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -97,13 +123,27 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
     <configuration name="generated-requests | #35" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#35" index="35" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.spjartz.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonEventsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="common-events" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.spjartz.commonevents.CommonEventsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="notification-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.spjartz.notificationservice.NotificationServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -154,7 +194,9 @@
       <workItem from="1767853361801" duration="313000" />
       <workItem from="1767853766428" duration="6106000" />
       <workItem from="1768277221235" duration="1247000" />
-      <workItem from="1768470263566" duration="8523000" />
+      <workItem from="1768470263566" duration="20071000" />
+      <workItem from="1768572798431" duration="14853000" />
+      <workItem from="1768806792587" duration="7353000" />
     </task>
     <task id="LOCAL-00001" summary="docker compose file added">
       <option name="closed" value="true" />
@@ -172,16 +214,36 @@
       <option name="project" value="LOCAL" />
       <updated>1767847645591</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="redis cache added to the application">
+      <option name="closed" value="true" />
+      <created>1768488773892</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1768488773892</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="docker compose file added" />
     <MESSAGE value="service discovery added" />
-    <option name="LAST_COMMIT_MESSAGE" value="service discovery added" />
+    <MESSAGE value="redis cache added to the application" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis cache added to the application" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

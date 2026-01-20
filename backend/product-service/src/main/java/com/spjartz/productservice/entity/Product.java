@@ -35,4 +35,12 @@ public class Product implements Serializable {
 
     @Schema(description = "Description of the product", example = "High-performance laptop with 16GB RAM")
     private String description;
+
+    @Column(nullable = false, columnDefinition = "int default 10")
+    @Schema(description = "Stock quantity of the product", example = "100")
+    private Integer stock = 10;
+
+    public void setStock(Integer stock) {
+        this.stock = (stock == null) ? 10 : stock;
+    }
 }

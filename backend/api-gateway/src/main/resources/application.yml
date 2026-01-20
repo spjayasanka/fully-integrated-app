@@ -21,6 +21,10 @@ spring:
               uri: lb://order-service
               predicates:
                 - Path=/api/orders/**
+            - id: notification-service
+              uri: lb://notification-service
+              predicates:
+                - Path=/api/notifications/**
 
 #      routes:
 #        - id: user-service

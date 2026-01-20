@@ -55,4 +55,15 @@ public class ProductService {
         }
         return false;
     }
+
+    public void reduceStock(Long productId, Integer quantity) {
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new IllegalArgumentException("Product not found with id: " + productId));
+        if (product.getStock() == null || product.getStock() < quantity) {
+            throw new IllegalArgumentException("Insufficient stock for product id: " + productId);
+        }
+        product.setStock(product.getStock() - quantity);
+        System.out.println("Reducing stock for product id " + productId + " by " + quantity + ". New stock: " + product.getStock());
+        productRepository.save(product);
+    }
 }
